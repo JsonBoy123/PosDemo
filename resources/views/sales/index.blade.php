@@ -1324,13 +1324,13 @@ function check_payment_type() {
 
 		 var test = $('#remaning_amount').val();
 		 //alert(test);
-		 if(test == 0){
-		 $('#add_payment_button').attr('disabled', false);
+		 if(test != 0){
+         $('#add_payment_button').attr('disabled', false);
+          @permission('wholesale')
+             $('#add_payment_button').attr('disabled', true);
+          @endpermission
 		 }else{
-		    $('#add_payment_button').attr('disabled', true);
-		    @permission('wholesale')
-		       $('#add_payment_button').attr('disabled', false);
-		    @endpermission
+         $('#add_payment_button').attr('disabled', false);
 		 }
 		}
 		else{
